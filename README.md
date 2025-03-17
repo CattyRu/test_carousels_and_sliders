@@ -1,3 +1,4 @@
-# test_carousels_and_sliders
+# Хранилище опробованных видов слайдеров и каруселей для сайтов
 
-[Edit in StackBlitz next generation editor ⚡️](https://stackblitz.com/~/github.com/CattyRu/test_carousels_and_sliders)
+Здесь хранится код слайдеров и каруселей, работающих с помощью CSS и JavaScript
+
