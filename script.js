@@ -32,8 +32,7 @@ class SliderVar2 {
     this.btnNext.addEventListener('click', () => {
       this.funBtnNext(this);
     });
-
-    // this.slider_content.prepend(this.slides[this.lastSlideIndex].cloneNode(true));
+    
     this.slider_content.append(this.slides[0].cloneNode(true));
     this.slider_content.append(this.slides[1].cloneNode(true));
     this.slider_content.append(this.slides[2].cloneNode(true));
@@ -46,15 +45,13 @@ class SliderVar2 {
     let width = parseFloat(elementStyles.getPropertyValue('width'));
     let margin = parseFloat(elementStyles.getPropertyValue('margin-right'));
     this.offset = width + margin;
-    // alert(this.offsetString);
   }
 
   funBtnPrev (_this) {
-    // alert('click btnPrev');
     this.nextSlideIndex = this.picSlideIndex - 1;
     if ( this.nextSlideIndex < 0 ) {
-      this.nextSlideIndex = this.lastSlideIndex;
-      
+      this.swapSlider(this)
+      this.nextSlideIndex = 5;
     };
     this.itemAnimation(this, this.moveTiming);
     this.picSlideIndex = this.nextSlideIndex;
@@ -64,7 +61,7 @@ class SliderVar2 {
     this.nextSlideIndex = this.picSlideIndex + 1;
     if ( this.nextSlideIndex > this.lastSlideIndex ) {
       this.swapSlider(this)
-      this.nextSlideIndex =  + 1;
+      this.nextSlideIndex = 1;
     };
     this.itemAnimation(this, this.moveTiming);
     this.picSlideIndex = this.nextSlideIndex;
@@ -76,10 +73,8 @@ class SliderVar2 {
 
   swapSlider (_this) {
     this.nextSlideIndex = (this.nextSlideIndex < 0) ? this.lastSlideIndex : 0;
-    // alert(this.nextSlideIndex);
     this.itemAnimation(this, this.swapSlider);
     this.picSlideIndex = this.nextSlideIndex;
-    return this.picSlideIndex;
   }
 
   moveContainer(_this) {
