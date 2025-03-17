@@ -2,6 +2,10 @@ h1 {
   justify-self: center;
 }
 
+p {
+  justify-self: center;
+}
+
 section {
   margin-bottom: 80px;
 }
