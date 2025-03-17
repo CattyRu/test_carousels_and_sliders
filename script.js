@@ -51,7 +51,7 @@ class SliderVar2 {
     this.nextSlideIndex = this.picSlideIndex - 1;
     if ( this.nextSlideIndex < 0 ) {
       this.swapSlider(this)
-      this.nextSlideIndex = 5;
+      this.nextSlideIndex = this.lastSlideIndex - 1;
     };
     this.itemAnimation(this, this.moveTiming);
     this.picSlideIndex = this.nextSlideIndex;
